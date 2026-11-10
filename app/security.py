@@ -4,7 +4,7 @@ import hashlib
 import secrets
 import datetime as dt
 import jwt
-import dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 

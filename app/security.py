@@ -4,8 +4,13 @@ import hashlib
 import secrets
 import datetime as dt
 import jwt
+import dotenv
 
-SECRET = os.getenv("SECRET_KEY", "dev-secret-change-me-in-production-0123456789")
+load_dotenv()
+
+SECRET = os.getenv("SECRET_KEY")
+if SECRET is None:
+    raise ValueError("Ошибка: Переменная SECRET_KEY не задана в окружении!")
 DEFAULT_ITERATIONS = 260_000
 
 
